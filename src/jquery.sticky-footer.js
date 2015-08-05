@@ -28,7 +28,7 @@
                 '<style>' +
                     'body > *:first-child:after {' +
                         'content: "";' +
-                        'display: block;'+
+                        'display: block;' +
                         'height: ' + footerHeight + 'px;' +
                     '}' +
                 '</style>'
