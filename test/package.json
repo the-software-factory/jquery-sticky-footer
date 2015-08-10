@@ -2,7 +2,6 @@
   "name": "jquery-sticky-footer-test",
   "description": "jQuery Sticky Footer test suite",
   "devDependencies": {
-    "karma": "^0.13.6",
     "karma-jasmine": "^0.3.6",
     "karma-phantomjs-launcher": "^0.2.0"
   }
