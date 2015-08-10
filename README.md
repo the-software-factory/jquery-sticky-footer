@@ -55,7 +55,7 @@ tests/
 ### Grunt Tasks
 Here is a list of grunt `tasks` => `actions` mappings, see below for a deeper explanation of the actions.
 
-|   *Grunt task*  | *jshint* | *uglify* | *watch* | *conventionalChangelog * | *changelogCommit* |
+|   *Grunt task*  | *jshint* | *uglify* | *watch* |  *conventionalChangelog* | *changelogCommit* |
 |-----------------|:--------:|:--------:|:-------:|:------------------------:|:-----------------:|
 | grunt           |     *    |     *    |         |                          |                   |
 | grunt watch     |          |          |    *    |                          |                   |
