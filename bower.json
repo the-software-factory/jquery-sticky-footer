@@ -7,6 +7,12 @@
       "email": "astronati@vendini.com"
     }
   ],
+  "contributors": [
+    {
+      "name": "Alexei Liulin",
+      "email": "codwizard@gmail.com"
+    }
+  ],
   "description": "Position the footer at the bottom of the page without using 'position: absolute'",
   "keywords": [
     "footer",

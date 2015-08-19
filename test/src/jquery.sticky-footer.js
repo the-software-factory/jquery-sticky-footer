@@ -23,6 +23,7 @@ describe("jQuery Sticky Footer test suite", function() {
      * Some dummy CSS classes used to build HTML tags
      *
      * @type {string[]}
+     * @private
      */
     var _cssClasses = ["class1", "class2", "class3", "class4", "class5"];
 

@@ -4,12 +4,11 @@
 (function($) {
 
     /**
-     * Define a jQuery object method called stickyFooter to position a footer at the bottom of the page.
+     * Defines a jQuery object method called stickyFooter to position a footer at the bottom of the page.
      *
-     * @param {Object} options (Optional)
      * @return {selector}
      */
-    $.fn.stickyFooter = function(options) {
+    $.fn.stickyFooter = function() {
 
         return this.each(function() {
             var footer = this;
