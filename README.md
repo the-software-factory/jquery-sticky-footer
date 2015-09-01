@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/the-software-factory/jquery-sticky-footer.svg?branch=master)](https://travis-ci.org/the-software-factory/jquery-sticky-footer)
+
 # jQuery Sticky Footer
 The footer is positioned at the bottom of the page but *without* an `absolute` position.
 
