@@ -32,12 +32,12 @@ $('.footer').stickyFooter();
 The project has the following structure:
 ```
 dist/
-*.min.js // The minified and uglified version of the component.
+    *.min.js // The uglified version of the component.
 src/
     *.js // The source file
-tests/
-    ... // Contains all tests and all needed file to set up a tests environment.
-    *.test.js // All tests need to have the "test" suffix before the extension.
+test/
+    src/*.js // Tests
+    ...      // Task runner configuration file and test dependencies
 ...
 ```
 

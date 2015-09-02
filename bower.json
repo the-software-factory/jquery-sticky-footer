@@ -24,9 +24,15 @@
     "jquery": "2.1.4"
   },
   "ignore": [
-    "examples",
-    "tests",
-    ".gitignore",
+    ".*",
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "example",
+    "test",
+    "CHANGELOG.md",
+    "CONTRIBUTING.md",
+    "README.md",
     "Gruntfile.js",
     "package.json"
   ],
