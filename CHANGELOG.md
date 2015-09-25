@@ -1,5 +1,15 @@
-<a name="0.1.0"></a>
-# [0.1.0](//compare/0.1.0...v0.1.0) (2015-09-25)
+<a name="0.2.0"></a>
+# [0.2.0](//compare/0.2.0...v0.2.0) (2015-09-25)
+
+
+### Features
+
+* Released version 0.2.0 [46c99a5](https://github.com/the-software-factory/jquery-sticky-footer/commit/46c99a509f8757b7d771eebaa1c87da8af654afb) 
+
+
+
+<a name="0.2.0"></a>
+# [0.2.0](//compare/0.1.0...0.2.0) (2015-09-25 10:39:55 +0200)
 
 
 ### Bug Fixes
