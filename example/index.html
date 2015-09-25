@@ -12,7 +12,9 @@
       </header>
       <div>
         Hello World
-        <button>Add</button>
+        <button>Add content</button>
+        <button>Stick</button>
+        <button>Destroy</button>
         <div id="content"></div>
       </div>
     </div>
@@ -23,13 +25,21 @@
         jQuery(document).ready(function($) {
             $('footer').stickyFooter();
 
-            $('button').on('click', function() {
+            $('button').first().on('click', function() {
                 $("<div>" +
                     "jQuery is a cross-platform JavaScript library designed to simplify the client-side scripting of " +
                     "HTML. jQuery is the most popular JavaScript library in use today, with installation on 65% of " +
                     "the top 10 million highest-trafficked sites on the Web. jQuery is free, open-source software " +
                     "licensed under the MIT License." +
                 "</div>").appendTo('#content');
+            });
+
+            $('button').eq(1).on('click', function() {
+              $('footer').stickyFooter();
+            });
+
+            $('button').eq(2).on('click', function() {
+               $('footer').stickyFooter('destroy');
             });
         });
     </script>

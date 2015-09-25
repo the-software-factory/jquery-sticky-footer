@@ -70,7 +70,7 @@ describe("jQuery Sticky Footer test suite", function() {
      * @returns {boolean}
      * @private
      */
-    var _checkIfFooterSticks = function() {
+    var _checkIfFooterSticksToBottom = function() {
         var footer = $("body > *").eq(1);
         var footerHeight = footer.outerHeight(true);
         var footerTopOffset = footer.offset().top;
@@ -82,7 +82,7 @@ describe("jQuery Sticky Footer test suite", function() {
     // Sets null margin on used HTML tags to make height calculation simpler
     beforeAll(function() {
         // Makes the CSS selector like tag1,tag2,tag3...
-        var noMarginTags = (["html", "body"].concat(_tagNames)).join();
+        var noMarginTags = (["html", "body", "p"].concat(_tagNames)).join();
 
         $("head").append(
             "<style type='text/css'>" +
@@ -108,7 +108,7 @@ describe("jQuery Sticky Footer test suite", function() {
             $("body").append(_buildHTMLELement(tagName, _cssClasses[index]));
             $("body > *").eq(1).stickyFooter();
 
-            expect(_checkIfFooterSticks()).toBe(true);
+            expect(_checkIfFooterSticksToBottom()).toBe(true);
         });
 
         it("Must stick if the content and footer have some data", function() {
@@ -116,7 +116,7 @@ describe("jQuery Sticky Footer test suite", function() {
             $("body").append(_buildHTMLELement(tagName, _cssClasses[index], _generateParagraphs(1)));
             $("body > *").eq(1).stickyFooter();
 
-            expect(_checkIfFooterSticks()).toBe(true);
+            expect(_checkIfFooterSticksToBottom()).toBe(true);
         });
 
         it("Must not overlap if the content and footer have a lots of data", function() {
@@ -124,7 +124,27 @@ describe("jQuery Sticky Footer test suite", function() {
             $("body").append(_buildHTMLELement(tagName, _cssClasses[index], _generateParagraphs(20)));
             $("body > *").eq(1).stickyFooter();
 
-            expect(_checkIfFooterSticks()).toBe(true);
+            expect(_checkIfFooterSticksToBottom()).toBe(true);
+        });
+
+        it("Sticks to the content when destroyed", function() {
+            $("body").append(_buildHTMLELement(tagName, _cssClasses[index], _generateParagraphs(5)));
+            $("body").append(_buildHTMLELement(tagName, _cssClasses[index], _generateParagraphs(1)));
+            $("body > *").eq(1).stickyFooter();
+
+            expect(
+                $("body > *").first().offset().top + $("body > *").first().outerHeight(true)
+            ).toBe($("body > *").eq(1).offset().top);
+        });
+
+        it("Sticks to the bottom when recreated after the destruction", function() {
+            $("body").append(_buildHTMLELement(tagName, _cssClasses[index], _generateParagraphs(5)));
+            $("body").append(_buildHTMLELement(tagName, _cssClasses[index], _generateParagraphs(1)));
+            $("body > *").eq(1).stickyFooter();
+            $("body > *").eq(1).stickyFooter('destroy');
+            $("body > *").eq(1).stickyFooter();
+
+            expect(_checkIfFooterSticksToBottom()).toBe(true);
         });
     });
 });
