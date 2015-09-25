@@ -15,41 +15,43 @@
      */
     $.fn.stickyFooter = function(action) {
 
-        if (action === 'destroy') {
-            $('html, body').css('height', 'auto');
-
-            $($(this).prev()).css({
-                marginBottom: 0,
-                minHeight: 'auto'
-            });
-
-            $("[data-sticky-footer-style]").remove();
-        }
-        else {
             return this.each(function() {
-                _footer = this;
                 var footer = this;
                 var content = $(footer).prev();
                 var footerHeight = $(footer).outerHeight(true);
 
-                $('html, body').css('height', '100%');
+                if (action === 'destroy') {
+                    $('html, body').removeClass('sticky-footer');
+                    $(content).removeClass('sticky-footer-content');
+                    $("body").find("style[data-sticky-footer]").remove();
+                }
+                else {
+                    $('html, body').addClass('sticky-footer');
+                    $(content).addClass('sticky-footer-content');
 
-                $(content).css({
-                    marginBottom: '-' + footerHeight + 'px',
-                    minHeight: '100%'
-                });
+                    // If the plugin was initialized multipe times we want to make sure the footerHeight has the most recent value
+                    if ($("body").find("style[data-sticky-footer]").length !== 0) {
+                        $("body").find("style[data-sticky-footer]").remove();
+                    }
 
-                // To avoid to include an external css, the css rules are attached via jQuery.
-                $("body").append(
-                    '<style data-sticky-footer-style>' +
-                        'body > *:first-child:after {' +
-                            'content: "";' +
-                            'display: block;' +
-                            'height: ' + footerHeight + 'px;' +
-                        '}' +
-                    '</style>'
-                );
+                    // To avoid to include an external css, the css rules are attached via jQuery.
+                    $("body").append(
+                        '<style data-sticky-footer>' +
+                            'body > *:first-child:after {' +
+                                'content: "";' +
+                                'display: block;' +
+                                'height: ' + footerHeight + 'px;' +
+                            '}' +
+                            'html.sticky-footer, body.sticky-footer {' +
+                                'height: 100%' +
+                            '}' +
+                            '.sticky-footer-content {' +
+                                'margin-bottom: -' + footerHeight + 'px;' +
+                                'min-height: 100%;' +
+                            '}' +
+                        '</style>'
+                    );
+                }
             });
-        }
     };
 }(jQuery));
