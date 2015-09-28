@@ -87,6 +87,16 @@ describe("jQuery Sticky Footer test suite", function() {
         $("head").append(
             "<style type='text/css'>" +
                 noMarginTags + " { margin: 0 }" +
+                "html.is-sticky-footer-enabled, html.is-sticky-footer-enabled > body {" +
+                    "height: 100%;" +
+                "}" +
+                "html.is-sticky-footer-enabled > body > :not([data-sticky-footer]) {" +
+                    "min-height: 100%;" +
+                "}" +
+                "html.is-sticky-footer-enabled > body > :not([data-sticky-footer])::after {" +
+                    "content: \"\";" +
+                    "display: block;" +
+                "}" +
             "</style>"
         );
     });
@@ -106,6 +116,7 @@ describe("jQuery Sticky Footer test suite", function() {
         it("Must stick if content and footer elements are empty", function() {
             $("body").append(_buildHTMLELement(tagName, _cssClasses[index]));
             $("body").append(_buildHTMLELement(tagName, _cssClasses[index]));
+
             $("body > *").eq(1).stickyFooter();
 
             expect(_checkIfFooterSticksToBottom()).toBe(true);

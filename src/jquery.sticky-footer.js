@@ -14,43 +14,31 @@
      * @return {selector}
      */
     $.fn.stickyFooter = function(action) {
-
             return this.each(function() {
-                var footer = this;
-                var content = $(footer).prev();
-                var footerHeight = $(footer).outerHeight(true);
-
                 if (action === 'destroy') {
-                    $('html, body').removeClass('sticky-footer');
-                    $(content).removeClass('sticky-footer-content');
-                    $("body").find("style[data-sticky-footer]").remove();
+                    $('html').removeClass('is-sticky-footer-enabled');
+                    $(this).removeAttr('data-sticky-footer');
+                    $.fn.stickyFooter.stickyFooterStyle.remove();
                 }
                 else {
-                    $('html, body').addClass('sticky-footer');
-                    $(content).addClass('sticky-footer-content');
+                    var footerHeight = $(this).outerHeight(true);
 
-                    // If the plugin was initialized multipe times we want to make sure the footerHeight has the most recent value
-                    if ($("body").find("style[data-sticky-footer]").length !== 0) {
-                        $("body").find("style[data-sticky-footer]").remove();
+                    if (!$('html').hasClass('is-sticky-footer-enabled')) {
+                        // Inject style tag and save a reference to it so it can be removed on footer destruction
+                        $.fn.stickyFooter.stickyFooterStyle = $(
+                            '<style type="text/css">' +
+                            'html.is-sticky-footer-enabled > body > :not([data-sticky-footer]) {' +
+                                'margin-bottom: -' + footerHeight + 'px' +
+                            '}' +
+                            'html.is-sticky-footer-enabled > body > :not([data-sticky-footer])::after {' +
+                                'height: ' + footerHeight + 'px' +
+                            '}' +
+                            '</style>'
+                        ).appendTo('body');
+
+                        $('html').addClass('is-sticky-footer-enabled');
+                        $(this).attr('data-sticky-footer', '');
                     }
-
-                    // To avoid to include an external css, the css rules are attached via jQuery.
-                    $("body").append(
-                        '<style data-sticky-footer>' +
-                            'body > *:first-child:after {' +
-                                'content: "";' +
-                                'display: block;' +
-                                'height: ' + footerHeight + 'px;' +
-                            '}' +
-                            'html.sticky-footer, body.sticky-footer {' +
-                                'height: 100%' +
-                            '}' +
-                            '.sticky-footer-content {' +
-                                'margin-bottom: -' + footerHeight + 'px;' +
-                                'min-height: 100%;' +
-                            '}' +
-                        '</style>'
-                    );
                 }
             });
     };
