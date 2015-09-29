@@ -15,6 +15,13 @@ module.exports = function(grunt) {
                 }
             }
         },
+        cssmin: {
+            minification: {
+                files: {
+                    'dist/jquery.sticky-footer.min.css': 'src/jquery.sticky-footer.css'
+                }
+            }
+        },
         usebanner: {
             banner: {
                 options: {
@@ -33,7 +40,7 @@ module.exports = function(grunt) {
                     }
                 },
                 files: {
-                    src: ['dist/jquery.sticky-footer.min.js']
+                    src: ['dist/jquery.sticky-footer.min.js', 'dist/jquery.sticky-footer.min.css']
                 }
             }
         },
@@ -84,6 +91,7 @@ module.exports = function(grunt) {
 
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-banner');
     grunt.loadNpmTasks('grunt-devserver');
     grunt.loadNpmTasks('grunt-contrib-watch');
@@ -116,7 +124,7 @@ module.exports = function(grunt) {
         });
     });
 
-    grunt.registerTask("default", ["jshint", "uglify", "usebanner"]);
+    grunt.registerTask("default", ["jshint", "uglify", "cssmin", "usebanner"]);
     grunt.registerTask("development", ["devserver", "watch"]);
     grunt.registerTask("changelog", ["emptyTheChangelog", "conventionalChangelog", "changelogCommit"]);
 };

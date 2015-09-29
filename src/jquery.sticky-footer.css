@@ -1,12 +1,12 @@
-html.is-sticky-footer-enabled, html.is-sticky-footer-enabled > body {
-    height: 100%;
+.is-sticky-footer-enabled {
+  height: 100%
 }
 
-html.is-sticky-footer-enabled > body > :not([data-sticky-footer]) {
-    min-height: 100%;
+.is-sticky-footer-enabled > :not([data-sticky-footer]) {
+  min-height: 100%;
 }
 
-html.is-sticky-footer-enabled > body > :not([data-sticky-footer])::after {
+.is-sticky-footer-enabled > :not([data-sticky-footer])::after {
     content: "";
     display: block;
 }

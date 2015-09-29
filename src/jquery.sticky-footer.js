@@ -16,7 +16,7 @@
     $.fn.stickyFooter = function(action) {
             return this.each(function() {
                 if (action === 'destroy') {
-                    $('html').removeClass('is-sticky-footer-enabled');
+                    $('html, body').removeClass('is-sticky-footer-enabled');
                     $(this).removeAttr('data-sticky-footer');
                     $.fn.stickyFooter.stickyFooterStyle.remove();
                 }
@@ -36,7 +36,7 @@
                             '</style>'
                         ).appendTo('body');
 
-                        $('html').addClass('is-sticky-footer-enabled');
+                        $('html, body').addClass('is-sticky-footer-enabled');
                         $(this).attr('data-sticky-footer', '');
                     }
                 }
