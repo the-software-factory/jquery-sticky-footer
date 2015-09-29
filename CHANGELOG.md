@@ -1,6 +1,10 @@
 <a name="0.2.0"></a>
-# [0.2.0](//compare/0.2.0...v0.2.0) (2015-09-28)
+# [0.2.0](//compare/0.2.0...v0.2.0) (2015-09-29)
 
+
+### Bug Fixes
+
+* CSS rules simplified, CSS minification added [3bbb69c](https://github.com/the-software-factory/jquery-sticky-footer/commit/3bbb69c8116725256151712a52fdf9e2072e3a89) 
 
 ### Features
 
