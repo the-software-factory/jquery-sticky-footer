@@ -2,11 +2,11 @@
   height: 100%
 }
 
-.is-sticky-footer-enabled > :not([data-sticky-footer]) {
+.is-sticky-footer-enabled .sticky-footer-sibling {
   min-height: 100%;
 }
 
-.is-sticky-footer-enabled > :not([data-sticky-footer])::after {
+.is-sticky-footer-enabled .sticky-footer-sibling::after {
     content: "";
     display: block;
 }
