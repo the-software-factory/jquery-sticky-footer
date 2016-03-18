@@ -22,25 +22,25 @@
       }
       else {
         var footerHeight = $(this).outerHeight(true);
-
-        if (!$('html').hasClass('is-sticky-footer-enabled')) {
-          $(this).parents().height('100%');
-          $(this).siblings().addClass('sticky-footer-sibling');
-          // Inject style tag and save a reference to it so it can be removed on footer destruction
-          $.fn.stickyFooter.stickyFooterStyle = $(
-            '<style type="text/css">' +
-            'html.is-sticky-footer-enabled > body .sticky-footer-sibling {' +
-                'margin-bottom: -' + footerHeight + 'px' +
-            '}' +
-            'html.is-sticky-footer-enabled > body .sticky-footer-sibling::after {' +
-                'height: ' + footerHeight + 'px' +
-            '}' +
-            '</style>'
-          ).appendTo('body');
-
-          $('html, body').addClass('is-sticky-footer-enabled');
-          $(this).attr('data-sticky-footer', '');
+        if ($('html').hasClass('is-sticky-footer-enabled')) {
+          $.fn.stickyFooter.stickyFooterStyle.remove();
         }
+        $(this).parents().height('100%');
+        $(this).siblings().addClass('sticky-footer-sibling');
+        // Inject style tag and save a reference to it so it can be removed on footer destruction
+        $.fn.stickyFooter.stickyFooterStyle = $(
+          '<style type="text/css">' +
+          'html.is-sticky-footer-enabled > body .sticky-footer-sibling {' +
+              'margin-bottom: -' + footerHeight + 'px' +
+          '}' +
+          'html.is-sticky-footer-enabled > body .sticky-footer-sibling::after {' +
+              'height: ' + footerHeight + 'px' +
+          '}' +
+          '</style>'
+        ).appendTo('body');
+
+        $('html, body').addClass('is-sticky-footer-enabled');
+        $(this).attr('data-sticky-footer', '');
       }
     });
   };

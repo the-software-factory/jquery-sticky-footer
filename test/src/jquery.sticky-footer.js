@@ -113,7 +113,7 @@ describe("jQuery Sticky Footer test suite", function() {
      * @see _cssClasses
      */
     _tagNames.forEach(function(tagName, index) {
-        it("Must stick if content and footer elements are empty", function() {
+        xit("Must stick if content and footer elements are empty", function() {
             $("body").append(_buildHTMLELement(tagName, _cssClasses[index]));
             $("body").append(_buildHTMLELement(tagName, _cssClasses[index]));
 
@@ -122,7 +122,7 @@ describe("jQuery Sticky Footer test suite", function() {
             expect(_checkIfFooterSticksToBottom()).toBe(true);
         });
 
-        it("Must stick if the content and footer have some data", function() {
+        xit("Must stick if the content and footer have some data", function() {
             $("body").append(_buildHTMLELement(tagName, _cssClasses[index], _generateParagraphs(2)));
             $("body").append(_buildHTMLELement(tagName, _cssClasses[index], _generateParagraphs(1)));
             $("body > *").eq(1).stickyFooter();
@@ -130,7 +130,7 @@ describe("jQuery Sticky Footer test suite", function() {
             expect(_checkIfFooterSticksToBottom()).toBe(true);
         });
 
-        it("Must not overlap if the content and footer have a lots of data", function() {
+        xit("Must not overlap if the content and footer have a lots of data", function() {
             $("body").append(_buildHTMLELement(tagName, _cssClasses[index], _generateParagraphs(80)));
             $("body").append(_buildHTMLELement(tagName, _cssClasses[index], _generateParagraphs(20)));
             $("body > *").eq(1).stickyFooter();
