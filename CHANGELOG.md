@@ -1,6 +1,16 @@
-<a name="0.2.1"></a>
-## [0.2.1](//compare/0.2.1...v0.2.1) (2016-02-25)
+<a name="0.2.2"></a>
+## [0.2.2](//compare/0.2.2...v0.2.2) (2016-03-18)
 
+
+
+
+<a name="0.2.2"></a>
+## [0.2.2](//compare/0.2.1...0.2.2) (2016-03-18 10:43:13 +0100)
+
+
+### Bug Fixes
+
+* Sticky footer is initialized every time it is called [af58954](https://github.com/the-software-factory/jquery-sticky-footer/commit/af58954709ecf36db7effb3a6f15b337c8f15898) 
 
 
 
