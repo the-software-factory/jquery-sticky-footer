@@ -7,6 +7,6 @@
 }
 
 .is-sticky-footer-enabled .sticky-footer-sibling::after {
-    content: "";
-    display: block;
+  content: "";
+  display: block;
 }
