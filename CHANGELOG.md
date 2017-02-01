@@ -1,12 +1,16 @@
-<a name="0.2.3"></a>
-## [0.2.3](//compare/0.2.3...v0.2.3) (2016-04-06)
+<a name="0.3.0"></a>
+# [0.3.0](//compare/0.3.0...v0.3.0) (2017-02-01)
 
 
 
 
-<a name="0.2.3"></a>
-## [0.2.3](//compare/0.2.2...0.2.3) (2016-04-06 18:19:39 +0200)
+<a name="0.3.0"></a>
+# [0.3.0](//compare/0.2.2...0.3.0) (2017-02-01 11:47:01 +0100)
 
+
+### Features
+
+* Added not minified files into the dist folder [14c07ac](https://github.com/the-software-factory/jquery-sticky-footer/commit/14c07acf8ea86cc2dd3edeebe89488e003fca8f4) 
 
 
 
@@ -21,26 +25,13 @@
 
 
 <a name="0.2.1"></a>
-## [0.2.1](//compare/0.2.0...0.2.1) (2016-02-25 18:30:53 +0100)
-
-
-### Bug Fixes
-
-* CSS rules simplified, CSS minification added [3bbb69c](https://github.com/the-software-factory/jquery-sticky-footer/commit/3bbb69c8116725256151712a52fdf9e2072e3a89) 
-
-### Features
-
-* Released version 0.2.0 [46c99a5](https://github.com/the-software-factory/jquery-sticky-footer/commit/46c99a509f8757b7d771eebaa1c87da8af654afb) 
-
-
-
-<a name="0.2.0"></a>
-# [0.2.0](//compare/0.1.0...0.2.0) (2015-09-25 10:39:55 +0200)
+## [0.2.1](//compare/0.1.0...0.2.1) (2016-02-25 18:30:53 +0100)
 
 
 ### Bug Fixes
 
 * Changelog hashes are now clickable links to respective GitHub pages [c710208](https://github.com/the-software-factory/jquery-sticky-footer/commit/c710208a93ed851735887e581285641335a793cd) 
+* CSS rules simplified, CSS minification added [3bbb69c](https://github.com/the-software-factory/jquery-sticky-footer/commit/3bbb69c8116725256151712a52fdf9e2072e3a89) 
 
 ### Features
 
@@ -49,6 +40,7 @@
 * Introdice the plugin parameter that specify whether to create or destroy the stcky footer [337a295](https://github.com/the-software-factory/jquery-sticky-footer/commit/337a295c1ee374fa8a7d2e185c3ef3c5a9718636) 
 * README corrected and updated, Bower added files to ignore [90e7b91](https://github.com/the-software-factory/jquery-sticky-footer/commit/90e7b912f3cb66719c56410d0829b25f21680859) 
 * README.md updated, Grunt tasks updated, package.json updated, karma config regenerated [9b1b352](https://github.com/the-software-factory/jquery-sticky-footer/commit/9b1b3529697cdc1b476891dfab23ed903b901cb1) 
+* Released version 0.2.0 [46c99a5](https://github.com/the-software-factory/jquery-sticky-footer/commit/46c99a509f8757b7d771eebaa1c87da8af654afb) 
 * Travis badge prepended to the README.md [d29351e](https://github.com/the-software-factory/jquery-sticky-footer/commit/d29351ee726ceb0616c117cc85357f6488b191e3) 
 * TravisCI configuration file added [4882dd5](https://github.com/the-software-factory/jquery-sticky-footer/commit/4882dd5247507ee90082b78ee6760a49cc9e90fe) 
 
